@@ -20,6 +20,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationService, NavigationService} from "./_services";
 import {JwtInterceptor} from "./_helpers/jwt.interceptor";
 import { LayoutModule } from '@angular/cdk/layout';
+import {NgxSpinnerModule} from "ngx-spinner";
+import {ErrorInterceptor} from "./_helpers/error.interceptor";
 
 @NgModule({
   declarations: [
@@ -49,9 +51,12 @@ import { LayoutModule } from '@angular/cdk/layout';
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    NgxSpinnerModule,
   ],
-  providers: [AuthenticationService,NavigationService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
+  providers: [AuthenticationService,NavigationService,
+              { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+              { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
