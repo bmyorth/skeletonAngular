@@ -9,12 +9,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MDBBootstrapModule} from "angular-bootstrap-md";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {
-    MatButtonModule,
-    MatCardModule, MatChipsModule, MatExpansionModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule, MatMenuModule, MatProgressBarModule,
-    MatSidenavModule, MatSlideToggleModule, MatStepperModule, MatToolbarModule
+  MatButtonModule,
+  MatCardModule, MatCheckboxModule, MatChipsModule, MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule, MatMenuModule, MatProgressBarModule, MatSelectModule,
+  MatSidenavModule, MatSlideToggleModule, MatStepperModule, MatToolbarModule
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationService, NavigationService} from "./_services";
@@ -22,12 +22,16 @@ import {JwtInterceptor} from "./_helpers/jwt.interceptor";
 import { LayoutModule } from '@angular/cdk/layout';
 import {NgxSpinnerModule} from "ngx-spinner";
 import {ErrorInterceptor} from "./_helpers/error.interceptor";
+import {RegisterComponent} from "./_components/register/register.component";
+import { ProfileComponent } from './_components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import {ErrorInterceptor} from "./_helpers/error.interceptor";
     MatExpansionModule,
     MatProgressBarModule,
     MatChipsModule,
+    MatCheckboxModule,
+    MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,

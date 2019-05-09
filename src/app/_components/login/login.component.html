@@ -3,7 +3,7 @@
   <!--Card image-->
   <div class="bg-primary white-text text-center py-4  gradient-card-header imnc-gradient">
     <div class="avatar mx-auto">
-      <img src="../../../assets/image/logo.ico" class=" w-25">
+      <img src="../../../assets/image/logo.png" class="logo-shadow w-50" >
     </div>
     <p>Instituto Mexicano de Normalización y Certificación, A.C</p>
     <h4 class="card-header-title">Bienvenido</h4>
@@ -16,34 +16,25 @@
 
     <!-- Form -->
       <form class=" text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-      <!-- Email -->
-        <div class="md-form">
-          <input mdbInput mdbValidate formControlName="username"  type="text"
-                 class="form-control " id="username" autofocus>
-          <label for="username">Usuario</label>
-           <mdb-error *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" >
+        <div class="form-group">
+          <mat-form-field class="w-100">
+            <input matInput  type="text" formControlName="username"  placeholder="Dirección de Correo" />
+            <mat-error *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" >
               Dirección de correo inválida
-            </mdb-error>
-            <mdb-error *ngIf="f.username.errors? f.username.errors.exist?true:null:false" >
-              {{loguinError}}
-            </mdb-error>
+            </mat-error>
+          </mat-form-field>
         </div>
-        <div class="mb-3"></div>
-      <!-- Password -->
-      <div class="md-form">
-            <input mdbInput mdbValidate formControlName="password"  type="password"
-                   class="form-control " id="password" >
-            <label for="password">Contraseña</label>
-            <mdb-error *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" >
+
+        <div class="form-group">
+          <mat-form-field class="w-100">
+            <input matInput type="password" formControlName="password"  placeholder="Contraseña" />
+            <mat-error  *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" >
               La contraseña es <strong>requerida</strong>
-            </mdb-error>
-      </div>
-      <div class="d-flex justify-content-around">
-        <div>
-          <!-- Remember me -->
-          <mdb-checkbox>Recordar</mdb-checkbox>
+            </mat-error>
+          </mat-form-field>
         </div>
+
+      <div class="d-flex justify-content-around">
         <div>
           <!-- Forgot password -->
           <a href="">Olvidó la Contraseña?</a>
@@ -52,8 +43,7 @@
 
       <!-- Sign in button -->
 
-      <button mdbBtn  [disabled]="loading" color="blue-grey"  rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
-              type="submit">
+      <button  mat-raised-button color="imnc"  [disabled]="loading" class="btn btn-block mt-3"  type="submit">
         <div class="d-flex justify-content-center">
         <span *ngIf="!loading">Acceder</span>
         <span *ngIf="loading">Verificando datos</span>
@@ -62,14 +52,13 @@
         </div>
         </div>
       </button>
-
+        <br>
         <div *ngIf="loguinError" class="text-center alert alert-danger" >
            <strong>{{loguinError}}</strong>
         </div>
 
       <!-- Register -->
-      <p>No es miembro?
-        <a href="">Registrate</a>
+      <p>
       </p>
 
       <!-- Social login -->
