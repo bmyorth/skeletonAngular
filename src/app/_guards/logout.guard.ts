@@ -15,8 +15,9 @@ export class OutGuard implements CanActivate {
         if (currentUser) {
             // authorised so return true
             this.auth.logout();
-            this.router.navigate(['/login']);
-            return false;
+
+           // this.router.navigate([this.router.url]);
+
         }
 
 

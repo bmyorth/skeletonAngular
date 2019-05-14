@@ -81,7 +81,7 @@ export class UserService {
    */
   update(user: User): Promise<any> {
     let url = `${this.API}/user/update`;
-
+    console.log(user);
     return this._http.post(url, JSON.stringify(user),httpOpcions)
       .toPromise()
       .then(response => UserService.updateSuccess(response))

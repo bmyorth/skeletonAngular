@@ -41,7 +41,8 @@ export class AuthenticationService {
     private  handleSuccess(response: any): Promise<any> {
         if (response.response)
         {
-            let user: User = response.data;
+            let user: User = new User();
+            user = response.data;
             user.token = response.token;
             this.setCurrentSession(response.data);
             this.router.navigate([" "]);

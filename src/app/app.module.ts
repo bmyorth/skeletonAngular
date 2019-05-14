@@ -17,7 +17,7 @@ import {
   MatSidenavModule, MatSlideToggleModule, MatStepperModule, MatToolbarModule
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AuthenticationService, NavigationService} from "./_services";
+import {AuthenticationService, NavigationService, UserService} from "./_services";
 import {JwtInterceptor} from "./_helpers/jwt.interceptor";
 import { LayoutModule } from '@angular/cdk/layout';
 import {NgxSpinnerModule} from "ngx-spinner";
@@ -60,7 +60,7 @@ import { ProfileComponent } from './_components/profile/profile.component';
     LayoutModule,
     NgxSpinnerModule,
   ],
-  providers: [AuthenticationService,NavigationService,
+  providers: [AuthenticationService,NavigationService,UserService,
               { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
               { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]

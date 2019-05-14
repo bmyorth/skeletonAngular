@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {User} from "../../_models";
 import {Login} from "../../_interfaces/login";
 import {AuthenticationService} from "../../_services";
 import {environment} from "../../../environments/environment";
@@ -67,14 +66,12 @@ export class LoginComponent implements OnInit {
   login(user:Login){
     this.authService.login(user)
         .then(result => {
-          console.log(result);
           this.loguinError = result;
           this.loading = false;
           this.resetForm();
         },
         error =>
         {
-          console.log(error);
           this.loading = false;
         })
   }

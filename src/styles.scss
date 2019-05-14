@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "imnc_theme.scss";
+
+$primary-color-dark:   #784b02;
+$primary-color:        #8f5b02;
+$primary-color-light:  #DBBD74;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #b65a1b;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
 body{
 
   position: absolute;
@@ -9,16 +20,16 @@ body{
   background-color: rgba(177, 116, 2, 0.15);
 }
 .imnc-gradient {
-  background-image: linear-gradient(180deg, #DBBD74 0%, #8f5b02 100%);
+  background-image: linear-gradient(180deg, $primary-color-light 0%, $primary-color 100%);
 
 }
 
 .mat-raised-button.mat-imnc, .mat-flat-button.mat-imnc{
-  background: #8f5b02 !important;
+  background: $primary-color !important;
   color: white !important;
 }
 .mat-form-field-empty.mat-form-field-label {
-  color: dimgrey !important;
+  color: $secondary-text-color !important;
 }
 .mat-form-field-underline {
   background-color: darkgrey !important;
@@ -27,21 +38,21 @@ body{
 .mat-focused {
   .mat-form-field-label
   {
-    color: #8f5b02 !important;
+    color: $primary-color-dark !important;
   }
   .mat-form-field-underline {
     .mat-form-field-ripple {
-      background-color: rgba(162, 106, 3, 0.56) !important;
+      background-color: $primary-color-dark !important;
       //display: none !important;
     }
   }
 }
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-  background-color: rgb(143, 91, 2) !important;
+  background-color: $primary-color !important;
 }
 
 .mat-ripple-element {
-  background: rgba(168, 114, 2, 0.4) !important;
+  background: $primary-color-dark !important;
 }
 
 .logo-shadow
@@ -50,33 +61,26 @@ body{
   filter: drop-shadow(0px 0px 250px rgb(255, 255, 255));
 }
 
-.toobar
-{
-  background-image: linear-gradient(120deg, #b19a5d 0%, #8A672D 100%);
-  color: white;
-}
-
-
 a{
-  color: #999;
+  color: $secondary-text-color;
   text-decoration: none;
 }
 a:hover{
   text-decoration: none;
-  color: #7a4c08;
+  color: $primary-color-dark;
 }
 a.active{
   text-decoration: none;
-  color: #7a4c08;
+  color: $primary-color-dark;
 }
 
 h5{
-  color: #8f5b02 !important;
+  color: $primary-color !important;
 }
 .header-user {
   background:  white !important;
 
-  color: dimgrey !important;
+  color: $secondary-text-color !important;
 }
 
 .nav-scroller {
